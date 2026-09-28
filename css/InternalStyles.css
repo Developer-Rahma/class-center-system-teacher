@@ -5,6 +5,10 @@
   /* border: 1px solid; */
 }
 
+
+*{
+
+}
 :root {
   --primary-color: #4c6bb6;
   --secondary-color: #d7e0ff;
