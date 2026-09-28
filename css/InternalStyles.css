@@ -1,0 +1,5530 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid; */
+}
+
+:root {
+  --primary-color: #4c6bb6;
+  --secondary-color: #d7e0ff;
+  --gray-color: #dddddd;
+  --secondry-Text-Color: #8a8a8a;
+
+  --background-light: #f6f6f6;
+  --lighting-color-one: #d7e0ff;
+  --light-color-two: #d7e0ff63;
+  --darking-color: #4c6bb6;
+  --darklight: #4c6bb680;
+  --light-red: #e10e0e;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fc;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.none {
+  display: none;
+}
+
+.parentHomePage {
+  /* border: solid; */
+  display: flex;
+}
+
+.parentSidebarAndNav {
+  /* border: solid; */
+  position: relative;
+}
+
+.BrandBtn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 14px 43px;
+  cursor: pointer;
+  -khtml-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  /* user-select: none; */
+  font-weight: 500;
+  outline: none;
+  border: none;
+}
+
+.InputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+}
+
+.InputGroup label {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.InputGroup input {
+  padding: 15px 20px;
+  border: 1px solid #dfe4ea;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.InputGroup p {
+  padding-left: 5px;
+}
+
+.InputGroup input::placeholder {
+  color: #b3b2b2;
+}
+
+.InputGroup.Error input {
+  border: 2px solid #f23030;
+}
+
+.InputGroup.Error p {
+  color: #f23030;
+}
+
+.InputWithIcon {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 5px 20px;
+  border: 1px solid #dfe4ea;
+  border-radius: 5px;
+  background: white;
+  justify-content: space-between;
+}
+
+.InputWithIcon input {
+  padding: 10px 0px;
+  border: none;
+  width: 90%;
+}
+
+.InputGroup .Icon img {
+  width: 20px;
+  height: 20px;
+}
+
+.InputGroup .Upload {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  padding: 10px 20px;
+  cursor: pointer;
+  max-width: 250px;
+  font-size: 13px;
+  border-radius: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 17px;
+}
+
+.InputGroup .Upload input {
+  opacity: 0;
+  padding: 0;
+  width: 0;
+  height: 0;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.PaginationContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Pagination {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #dfe4ea;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.Pagination a {
+  color: black;
+  float: left;
+  padding: 10px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  border: 1px solid #dfe4ea;
+  border-radius: 10px;
+}
+
+.Pagination a:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+.Pagination a.active {
+  background: var(--primary-color);
+  color: white;
+}
+
+.Pagination.Narrow {
+  display: inline-block;
+}
+
+.Pagination.Narrow a {
+  border-radius: 0;
+}
+
+.Pagination.Narrow a:hover {
+  background: #f2f5ff;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.Pagination.Narrow a.active {
+  background: #f2f5ff;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.block {
+  display: block;
+}
+
+#close22 {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.DatePicker {
+  position: relative;
+  display: inline-block;
+  /*margin-bottom: 20px;  Add spacing between date pickers */
+}
+
+.DatePicker span {
+  font-weight: 600;
+}
+
+.DateInput {
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 220px;
+  /* Fixed width for consistency */
+  position: relative;
+}
+
+.Calendar {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #eeeeee;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.CalendarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 10px 8px 10px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.CalendarHeader button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
+  background: #f8f8fa;
+  display: inline-block;
+  border-radius: 8px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.CalendarNextMonth:before,
+.CalendarPrevMonth:before,
+.CalendarNextMonth:after,
+.CalendarPrevMonth:after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 3px;
+  background-color: #371f1d;
+  border-radius: 100px;
+  top: 50%;
+
+  position: absolute;
+}
+
+.CalendarPrevMonth:before {
+  top: calc(50% - 4px);
+  left: 50%;
+  left: calc(50% - 4px);
+  transform: rotate(-45deg);
+}
+
+.CalendarPrevMonth:after {
+  top: 50%;
+  left: 50%;
+  left: calc(50% - 4px);
+  transform: rotate(45deg);
+}
+
+.CalendarNextMonth:before {
+  top: calc(50% - 4px);
+  right: 50%;
+  right: calc(50% - 4px);
+  transform: rotate(-135deg);
+}
+
+.CalendarNextMonth:after {
+  top: 50%;
+  right: 50%;
+  right: calc(50% - 4px);
+  transform: rotate(135deg);
+}
+
+.DaysOfWeek {
+  display: flex;
+  justify-content: space-around;
+  /*background: #f0f0f0;*/
+  border-top: 1px solid #eaeaea;
+  padding: 10px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.DaysCont {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  padding: 10px;
+}
+
+.DaysCont div {
+  pointer-events: none;
+}
+
+.CalendarDay {
+  height: 38px;
+  width: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 6px;
+  pointer-events: unset !important;
+}
+
+.CalendarDay:hover {
+  background: #e1f0ff;
+}
+
+.CalendarDay.Disabled {
+  background-color: #f1f1f1;
+  color: #d2d2d2;
+  cursor: not-allowed;
+}
+
+.MonthYear {
+  width: 80%;
+  width: calc(100% - 90px);
+  border-radius: 8px;
+  background: #f8f8fa;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.YearSelector {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+  border: 1px solid #eeeeee;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.YearItem {
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.YearItem:hover {
+  background-color: #f4f4f4;
+}
+
+/* Side Bar */
+.sideBar {
+  padding: 0 20px;
+  color: var(--primary-color);
+  /* height: 100vh; */
+  position: fixed;
+  /* position: sticky; */
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+  transition: width 0.3s ease;
+  overflow: hidden;
+  /* justify-content: space-between; */
+  z-index: 15;
+  background-color: white;
+  border: 1px solid var(--gray-color);
+}
+
+.SideBarContainer {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.sideBar .logo {
+  padding: 20px;
+  text-align: center;
+  margin-right: 20px !important;
+  padding: 10px !important;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.sideBar.collapsed {
+  width: 80px;
+}
+
+.sideBar.block {
+  display: block;
+}
+
+.sideBar.collapsed .logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.logo-menue-items-container {
+  width: 100%;
+}
+
+.logo img {
+  width: 100px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#logo-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.sideBar.collapsed .Hide {
+  display: none;
+}
+
+.UserProfile img {
+  object-fit: cover;
+}
+
+/* a */
+.none {
+  display: none;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.menu-items a,
+.create-new a {
+  display: inline-block;
+  width: 100%;
+  padding: 8px 10px;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.create-new {
+  background-color: var(--secondary-color);
+}
+
+.create-new a {
+  color: white;
+}
+
+.menu-items a:hover {
+  border-radius: 4px;
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.svg-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.svg-container svg {
+  width: 18px;
+  height: 23px;
+  fill: white;
+}
+
+.UserProfile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  /* max-width: 100%; */
+}
+
+/* a */
+.Header {
+  width: 100%;
+  border-bottom: 1px solid var(--gray-color);
+  /* position: relative;  a*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* border: solid; */
+  background-color: #fff;
+  z-index: 11;
+}
+
+.HeaderContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 77%;
+  padding: 11px;
+  margin-left: 50px;
+}
+
+.HeaderContainer p {
+  color: var(--primary-color);
+}
+
+.HeaderContainer .Icons {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.notificationButton,
+.ContactUsButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.NotificationDiv.none {
+  display: none;
+}
+
+.NotificationDiv {
+  position: absolute;
+  top: 53px;
+  right: 186px;
+  z-index: 2000;
+}
+
+.NotificationBox {
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  margin: 20px auto;
+}
+
+.NotificationHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.NotificationHeader h2 {
+  font-size: 20px;
+  color: #333;
+  margin: 0;
+}
+
+.NotificationHeader p {
+  font-size: 14px;
+  color: var(--primary-color);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #e0e0e0;
+  margin: 10px 0;
+}
+
+.NotificationContent {
+  margin-top: 10px;
+}
+
+.NotificationContentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.NotificationContentHeader p {
+  font-size: 16px;
+  color: var(--secondry-Text-Color);
+  font-weight: bold;
+}
+
+.Mark {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.Mark p {
+  font-size: 12px;
+  color: var(--primary-color);
+}
+
+.Content {
+  margin-top: 10px;
+  background-color: #f9fafb;
+  border-radius: 6px;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+}
+
+.Content p {
+  font-size: 14px;
+  color: var(--secondry-Text-Color);
+  margin: 5px 0;
+}
+
+.Content span {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+/* a */
+.pages {
+  /* border: solid; */
+  width: 100%;
+  margin-top: 4rem;
+}
+
+/* a */
+.Page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  /* margin-left: 50px; */
+}
+
+.PageContainer {
+  display: flex;
+  width: 84%;
+  flex-direction: column;
+}
+
+.Heading {
+  height: 82px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  line-height: 1.7rem;
+}
+
+.Heading p,
+.Heading span {
+  font-size: 1rem;
+}
+
+.Heading span {
+  font-weight: 900;
+  font-size: 22px;
+  color: var(--primary-color);
+}
+
+.Boxes {
+  display: flex;
+  gap: 7px;
+  color: var(--primary-color);
+  width: 100%;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.Box {
+  padding: 17px 20px;
+  background-color: white;
+  width: calc(100% / 5 - 20px);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  border: 1px solid var(--gray-color);
+}
+
+.PopupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.Popup {
+  background-color: white;
+  padding: 25px 20px;
+  border-radius: 8px;
+  width: 360px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: black;
+}
+
+.Popup h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.Popup p {
+  margin: 0 0 20px;
+  font-size: 14px;
+}
+
+.ParentLabel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.Form label,
+.Form p {
+  display: block;
+  font-size: 14px;
+  line-height: 24px;
+  margin: 10px 0 5px;
+  text-align: left;
+  width: 30%;
+  color: black;
+  font-weight: bold;
+}
+
+.Form,
+.ParentLabel input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  box-sizing: border-box;
+  /* flex-shrink: 0; */
+}
+
+.ParentLabel input {
+  border: 1px solid var(--gray-color);
+}
+
+.ParentLabel select {
+  width: 70%;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  border: 1px solid var(--gray-color);
+}
+
+.Buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.custom-select {
+  position: relative;
+  width: 70%;
+}
+
+.select-box {
+  width: 92%;
+  padding: 11px;
+  border: 1px solid var(--gray-color);
+  border-radius: 4px;
+  font-size: 12px;
+
+  white-space: normal;
+  cursor: pointer;
+}
+
+.options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  border: 1px solid var(--gray-color);
+  border-radius: 4px;
+  background-color: white;
+  z-index: 1000;
+  max-height: 150px;
+  overflow-y: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.options li {
+  padding: 8px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.options li:hover {
+  background-color: var(--secondary-color);
+}
+
+.Buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.CancelBtn {
+  background-color: transparent;
+  color: red;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.SendBtn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.SendBtn:hover {
+  background-color: #3e5fa0;
+}
+
+.IconText {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.GamesMyFolders {
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.GamesMyFolderContainer {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.GamesMyFolders .GamesPolls {
+  width: 69%;
+  padding: 0px 20px;
+  background-color: white;
+  border-radius: 11px;
+  border: 1px solid var(--gray-color);
+  margin-bottom: 10px;
+}
+
+.GamesMyFolderContainer .MyFoldersMyTasks {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  padding: 0px 15px;
+}
+
+.MyFoldersMyTasks .MyFolders {
+  border: 1px solid var(--gray-color);
+  color: #273669;
+  border-radius: 17px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+}
+
+.MyFoldersMyTasks .MyTasks {
+  color: var(--primary-color);
+  border-radius: 15px;
+  background-color: white;
+  border: 1px solid var(--gray-color);
+}
+
+.MyFoldersHeader,
+.MyTasksHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  color: var(--primary-color);
+}
+
+.MyFoldersHeader .showAllIcons svg {
+  fill: white;
+  width: 50px;
+}
+
+.Grades {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.Grade {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 48%;
+  padding: 20px;
+  gap: 5px;
+  border: 1px solid var(--gray-color);
+  color: var(--primary-color);
+  border-radius: 11px;
+}
+
+.Grade p {
+  margin: 0;
+  padding: 0;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.header h1 {
+  font-size: 25px;
+}
+
+.MyTasksContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 20px;
+  gap: 17px;
+}
+
+.Taskcontainer {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: 700;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.Taskcontainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+.Taskcontainer:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.Taskcontainer input:checked ~ .checkmark {
+  background-color: var(--primary-color);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.Taskcontainer input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.Taskcontainer .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.new-task-input {
+  width: 100%;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  border: 2px solid var(--gray-color);
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.3s;
+  color: #999;
+  background-color: white;
+}
+
+.new-task-input:focus {
+  border-color: var(--primary-color);
+}
+
+.new-task-input::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+.GamePollsHeader,
+.SearchSort {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+#MyTaskPopupOverlay .Popup {
+  padding: 10px 15px;
+  width: 550px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#MyTaskPopupOverlay .Popup p {
+  margin: 0;
+}
+
+/* a */
+.GamePolls,
+.showAllIcons,
+.SortBy {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.GamePolls {
+  background-color: #f4f4f5;
+  color: var(--secondry-Text-Color);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.GamePolls div.active {
+  padding: 7px 10px;
+  background-color: white;
+  border-radius: 8px;
+  color: var(--primary-color);
+}
+
+.SearchSort {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  gap: 10px;
+}
+
+.Search {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 50%;
+}
+
+.Search input[type="text"] {
+  width: 100%;
+  padding: 15px 35px 12px 15px;
+  background-color: rgb(243, 243, 243);
+  border: 1px solid #d0d7e7;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #4c6bb6;
+}
+
+.SearchIcon {
+  position: absolute;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.SortBy {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--secondry-Text-Color);
+}
+
+.SortBy p {
+  margin: 0;
+  font-weight: bold;
+}
+
+.DropDownContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  color: white;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9faff;
+  min-width: 120px;
+  border: 1px solid #d0d7e7;
+  border-radius: 6px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: var(--primary-color);
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+}
+
+.dropdown-content a:hover {
+  background-color: #d7e0ff;
+  color: var(--primary-color);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.showAllIcons p {
+  color: var(--primary-color);
+}
+
+.Rows {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Row {
+  border: 1px solid var(--gray-color);
+  border-radius: 9px;
+  padding: 16px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.RowHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-bottom: 12px; */
+  width: 15%;
+  height: 80px;
+}
+
+.ROWDescrption {
+  flex: 1;
+}
+
+.Games-Status {
+  font-size: 14px;
+  color: var(--primary-color);
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.para {
+  display: flex;
+  gap: 5px;
+}
+
+.dura {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dura svg {
+  width: 15px;
+  height: 20px;
+}
+
+.Games-Status p {
+  margin: 0;
+  padding: 10px 8px;
+  border-radius: 8px;
+}
+
+.Games-Status p:first-child {
+  background-color: var(--secondary-color);
+}
+
+.Games-Status p:nth-child(2) {
+  background-color: #22ad5c33;
+}
+
+.ShowIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5%;
+}
+
+.ShowIcon span {
+  position: relative;
+}
+
+.DropList {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  width: 150px;
+  height: 150px;
+  background-color: white;
+  color: #637381;
+  line-height: 24px;
+  font-weight: 400;
+  font-size: 15px;
+  padding: 10px 0px;
+}
+
+.DropList ul {
+  list-style-type: none;
+}
+
+.DropList ul li {
+  padding: 7px;
+}
+
+.DropList ul li:hover {
+  background-color: #ebebeed0;
+  color: var(--primary-color);
+}
+
+.RowContainer {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  width: 95%;
+}
+
+.Image {
+  width: 44px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58%;
+  height: 75%;
+}
+
+.ROWDescrption h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333333;
+  margin: 0 0 8px 0;
+}
+
+.Durations {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary-color);
+  font-size: 12px;
+  justify-content: space-between;
+}
+
+.DurationsContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.Durations p {
+  margin: 0;
+}
+
+.CreateRooms {
+  /* margin-top: 12px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.CreateRooms h2 {
+  color: var(--primary-color);
+}
+
+/*
+create New Class
+
+*/
+.bigpage-container {
+  background-color: #f8f9fc;
+  height: 100%;
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.MyClassesContainer,
+.ContactUs,
+.SettingBigContainer {
+  display: flex;
+  width: 100%;
+  /* margin-left: auto; a */
+  flex-direction: column;
+  /* height: 100vh; */
+  padding: 0 5px;
+}
+
+.ClassContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.MyClassesContainer h1 {
+  color: var(--primary-color);
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.ParentStep {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.Steps {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.ParentContainerForm {
+  /* width: 67%; */
+  margin: 0 auto;
+}
+
+.step {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e0e0e0;
+  color: white;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.step.active {
+  background-color: var(--primary-color);
+}
+
+.steps span {
+  font-size: 12px;
+  color: #888;
+}
+
+.Form {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  height: 54vh;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.Form h2 {
+  font-size: 26px;
+  line-height: 39px;
+  font-weight: 500;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.ParentCreateClass {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 90%;
+  margin: auto;
+}
+
+.Form input {
+  width: 50%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.SelectPClass {
+  text-align: start;
+}
+
+.ParentImagesAvatars {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 100%;
+  gap: 1rem;
+}
+
+.ParentImagesAvatars p {
+  font-weight: bold;
+  color: black;
+  font-size: 18px;
+}
+
+.Avatars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: start;
+  width: 70%;
+}
+
+.Avatar {
+  width: 80px;
+  height: 80px;
+  background-color: #ddd;
+  border-radius: 50%;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.Avatar img,
+.SummaryBox img {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.Form a {
+  color: var(--primary-color);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.Form a:hover {
+  text-decoration: underline;
+}
+
+.CreateButton {
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  display: block;
+  margin: 20px auto;
+}
+
+.CreateButton:hover {
+  background-color: white;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.AddAnother {
+  display: inline-block;
+  margin: 10px 0;
+  padding: 8px 12px;
+  font-size: 16px;
+  color: var(--primary-color);
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+  gap: 46px;
+}
+
+.continue {
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #fff;
+  background-color: var(--primary-color);
+  border: none;
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.skip {
+  color: var(--primary-color);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.skip:hover {
+  text-decoration: underline;
+}
+
+.AddClassStudent {
+  display: none;
+}
+
+.FinalStep {
+  display: none;
+}
+
+.class-avatar {
+  width: 150px;
+  height: 130px;
+  background-color: #ddd;
+  border-radius: 50%;
+  background-size: cover;
+}
+
+.ClassDetails {
+  font-size: 14px;
+}
+
+.ClassDetails h3 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.StudentList {
+  list-style: none;
+  padding: 9px;
+}
+
+.StudentList li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--text-color);
+  font-size: 14px;
+  padding: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #ffffff;
+  background-color: var(--primary-color);
+  border: none;
+  text-align: center;
+}
+
+.button.back {
+  background-color: #555555;
+}
+
+.button.finish {
+  background-color: var(--primary-color);
+}
+
+.button:hover {
+  opacity: 0.9;
+}
+
+.SummaryBox {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+  background-color: white;
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  justify-content: space-evenly;
+  /* height: 34vh; */
+  padding: 20px;
+}
+
+.SummaryBox img {
+  width: 150px;
+  height: 150px;
+}
+
+.AddClassStudent {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.FormHeading,
+.FormHeading p {
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  margin-top: 15px;
+}
+
+.AddClassStudent h2 {
+  color: var(--primary-color);
+}
+
+.Finish,
+.FormClass {
+  align-items: center !important;
+}
+
+/* Contact Us Container*/
+.ContactUs {
+  justify-content: flex-start;
+}
+
+.ContactUpperHeading {
+  color: var(--primary-color);
+}
+
+.ContactUsBigContainer {
+  padding: 13px 15px;
+  display: flex;
+  background-color: white;
+  border-radius: 8px;
+  gap: 15px;
+  height: 73vh;
+}
+
+.ContactInformation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  background: var(--Primary, #4c6bb6);
+  border-radius: 11px;
+  color: white;
+}
+
+.ContactInformationHeading h2 {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 42px;
+}
+
+.ContactInformationHeading p {
+  color: #c9c9c9;
+  font-size: 20px;
+  line-height: 27px;
+  font-weight: 400;
+}
+
+.Contacts {
+  padding: 10px;
+}
+
+.ContactInfo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 50px;
+}
+
+.FormInputs {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.FormInputs label {
+  color: var(--primary-color);
+  font-weight: 700;
+  line-height: 22px;
+  font-size: 14px;
+}
+
+.FormInputs input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #c0c0c0;
+  margin-bottom: 30px;
+  padding: 10px 15px;
+}
+
+.FormInputs div {
+  width: 50%;
+}
+
+.ContactForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 60%;
+}
+
+.ContactInformation {
+  width: 40%;
+}
+
+.SubjectOptions {
+  display: flex;
+  gap: 11px;
+  padding: 10px;
+}
+
+.SubjectOptions label {
+  color: var(--primary-color);
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.SelectSubject h3 {
+  color: var(--primary-color);
+}
+
+.Message h3 {
+  color: var(--primary-color);
+}
+
+.MesageContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+textarea {
+  width: 90%;
+  height: 100px;
+  padding: 10px;
+  border-radius: 4px;
+  resize: vertical;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #8d8d8d;
+}
+
+.SendMessage {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.SendMessageBtn {
+  width: 30%;
+}
+
+.ContactsIcons svg {
+  margin-right: 20px;
+}
+
+/* setting page*/
+#account,
+#subscription,
+#Activity {
+  display: none;
+}
+
+.SettingContainer {
+  display: flex;
+  width: 100%;
+}
+
+.SettingRight {
+  width: 100%;
+}
+
+.SettingHeader h2 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.SettingHeader p {
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #8a8a8a;
+}
+
+.SettingSideBar {
+  height: 100vh;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.SettingSideBar a {
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.SettingSideBar a:hover {
+  background-color: var(--secondary-color);
+}
+
+.FormContainer {
+  max-width: 900px;
+  border-radius: 10px;
+  padding: 20px;
+  margin: auto;
+}
+
+.FormContainer h2 {
+  margin-bottom: 20px;
+}
+
+.FormContent {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.ProfileForm {
+  flex: 5;
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.FirstLastInputGroup {
+  display: flex;
+  gap: 10px;
+}
+
+input[type="text"] {
+  flex: 1;
+}
+
+.InputContainer {
+  display: flex;
+  gap: 4px;
+}
+
+.FormButtons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.cancel-btn {
+  background-color: transparent;
+  color: #d9534f;
+  padding: 10px 20px;
+  border: 1px solid #d9534f;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.upload-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 2;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.upload-section img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.upload-section svg {
+  fill: white;
+}
+
+.upload-btn {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.upload-section p {
+  font-size: 15px;
+  color: #6e7485;
+  line-height: 22px;
+  text-align: center;
+}
+
+#account .InputGroup {
+  gap: 32px;
+}
+
+.subscriptionContainer {
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.subscriptionContainer h1,
+.subscriptionContainer h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.subscriptionHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.Plan {
+  max-width: 70%;
+}
+
+.Plan h3 {
+  margin-bottom: 5px;
+  color: #060606;
+}
+
+.Plan p {
+  font-size: 14px;
+  color: #666;
+}
+
+.PlanBtn button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.PlanBtn button:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.NextSub {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.NextSub p {
+  color: #666;
+  margin: 0;
+}
+
+.PaymentBtn button {
+  background-color: transparent;
+  color: #d9534f;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px;
+}
+
+.UpdateBtn button {
+  background-color: white;
+  color: #030303;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid var(--gray-color);
+  font-size: 16px;
+  font-weight: 500;
+  padding: 15px;
+}
+
+.PaymentBtn button:hover {
+  background-color: #f9d6d6;
+}
+
+.PaymentDetails h3 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.PaymentRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ImgContent {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.ImgContent svg {
+  width: 47px;
+  height: 16px;
+}
+
+.ContentDesc h3 {
+  margin: 0;
+  color: var(--primary-color);
+}
+
+.ContentDesc p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.tableContainer {
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.filterBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.filterBar button {
+  background-color: transparent;
+  color: black;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.filterBar button:hover {
+  background-color: var(--secondary-color);
+}
+
+.sortOptions {
+  display: flex;
+  align-items: center;
+}
+
+.sortOptions label {
+  margin-right: 5px;
+}
+
+.sortOptions select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.activityTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.activityTable th,
+.activityTable td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.activityTable th {
+  font-weight: bold;
+  color: #333;
+}
+
+.activityTable td {
+  color: #555;
+  padding: 18px;
+}
+
+.tag {
+  background-color: #3758f914;
+  color: var(--primary-color);
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.pagination button {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background-color: #4c77d0;
+  color: #fff;
+  border-color: #4c77d0;
+}
+
+.pagination button:hover {
+  background-color: #f0f0f0;
+}
+
+.pagination span {
+  padding: 5px 10px;
+  color: #666;
+}
+
+/*
+My Classes
+*/
+
+.classesContainer {
+  max-width: 1610px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h2 {
+  font-size: 24px;
+  color: var(--primary-color);
+}
+
+.actions .btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.btn.primary {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  padding: 12px 13px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.btn.secondary {
+  background-color: #eef2f7;
+  color: var(--primary-color);
+  border: none;
+  padding: 12px 13px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.filterBar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+
+  padding: 10px 0;
+  width: 100%;
+  justify-content: center;
+}
+
+.SearchInput {
+  position: relative;
+  /* width: 54%; */
+  padding: 10px;
+}
+
+.SearchButton {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px 5px;
+  width: 90%;
+  justify-content: space-between;
+}
+
+.filterBar button {
+  color: var(--primary-color);
+  border: 1px solid #ccc;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.sortOptions {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  justify-content: flex-end;
+  gap: 19px;
+}
+
+.sortOptions label {
+  margin-right: 5px;
+}
+
+.sortOptions select {
+  padding: 14px 14px 18px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  width: 50%;
+}
+
+.classCardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.classCard {
+  border-radius: 10px;
+  width: calc(50% - 20px);
+  padding: 20px 25px;
+  display: flex;
+  position: relative;
+  border: 1px solid var(--gray-color);
+  background-color: white;
+}
+
+.classCard img {
+  width: 100px;
+  border-radius: 10px;
+  height: 100px;
+  margin: 10px;
+  object-fit: contain;
+}
+
+.cardHeader {
+  position: relative;
+  /* width: 25%; */
+}
+
+.MoreDiv {
+  width: 5%;
+}
+
+.classCard h3 {
+  font-size: 24px;
+  margin: 10px 0;
+  color: var(--primary-color);
+  line-height: 27px;
+  font-weight: 500;
+}
+
+.cardDetails {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.cardDetails span {
+  font-size: 18px;
+  color: #33363f;
+}
+
+.moreOptions {
+  background: none;
+  border: none;
+  font-size: 38px;
+  color: #888;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.Active {
+  color: #1a8245;
+}
+
+.CardDetailsToggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Introduction {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.cardDetails {
+  display: flex;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+/* classes drop down*/
+.DropDown {
+  position: relative;
+  display: inline-block;
+}
+
+.DropdownContent {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding: 10px;
+}
+
+.DropdownContent input {
+  border: none;
+  padding: 11px 25px;
+}
+
+.DropdownContent input::placeholder {
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+.DropdownContent div {
+  padding: 5px 0;
+}
+
+.DropdownContent div:hover {
+  background-color: #f1f1f1;
+}
+
+.DropDownIcon {
+  position: absolute;
+  top: 13px;
+  left: 11px;
+}
+
+.RadioGroup label {
+  margin-bottom: 19px;
+  display: inline-block;
+}
+
+.date-picker-popup {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  border-radius: 4px;
+}
+
+/*
+Single Class
+*/
+.SingleClassContainer,
+.ManageClassContainer,
+.MyFolderContainer,
+.GameClassContainer,
+.RoomClassContainer,
+.SingleGameContainer,
+.ContactUs,
+.SettingBigContainer,
+.MyPoolsMainContainer,
+.MyClasses,
+.CreateNewPoolContainer,
+.classesContainer,
+.LeaderBoardContainer {
+  width: calc(100% - 200px);
+  /* border: solid; */
+}
+
+.SingleClassHeader,
+.StatusIntroduction,
+.CrudAddNewStd,
+.AddNewStdBtn {
+  display: flex;
+}
+
+.StatusIntroduction {
+  gap: 5px;
+}
+
+.SingleClassHeader {
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.StatusIntroduction h3 {
+  color: #28a745;
+  background-color: #22ad5c33;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  max-width: 150px;
+}
+
+.StatusIntroduction h1 {
+  margin: 5px 0 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.CrudAddNewStd {
+  align-items: center;
+  gap: 20px;
+}
+
+.Icons {
+  display: flex;
+  gap: 15px;
+}
+
+.Icons svg {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.Icons svg:hover {
+  transform: scale(1.1);
+}
+
+.AddNewStdBtn {
+  background-color: #d7e0ff80;
+  border-radius: 8px;
+  padding: 10px 15px;
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.AddNewStdBtn:hover {
+  background-color: var(--primary-color);
+  color: #eeeef0ef !important;
+}
+
+.AddNewStdBtn .Icon {
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.SingleClassContent {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  padding: 10px;
+  background-color: #fefeff;
+}
+
+.StudentRows .StudentRow {
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+.RecentRooms,
+.StudentLeaderBoard {
+  border: 1px solid var(--gray-color);
+  border-radius: 10px;
+  flex: 1;
+  padding: 10px;
+}
+
+.RecentRoomHeader,
+.RecentRoomsLeft,
+.CreateRoomsRight {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
+.RecentRoomsLeft svg {
+  width: 25px;
+  height: 25px;
+}
+
+.RecentRoomsLeft h3 {
+  font-size: 23px;
+  color: var(--primary-color);
+}
+
+.RecentRoomHeader {
+  padding: 20px 10px;
+}
+
+.CreateRoomsRight svg {
+  width: 20px;
+  height: 20px;
+}
+
+.CreateRoomsRight p {
+  font-size: 20px;
+  line-height: 1.4rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.RowContainer .Rows {
+  width: 100%;
+}
+
+.Image {
+  background-color: #e7edfd;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.Image svg {
+  width: 45px;
+  height: 45px;
+}
+
+.CreateRooms h3 {
+  color: var(--primary-color);
+}
+
+/* leader Board*/
+.LeaderBoard {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.LeaderBoardItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  padding: 10px;
+  width: 180px;
+  text-align: center;
+}
+
+.LeaderBoardItem p {
+  margin-bottom: 3px;
+}
+
+.RankImage {
+  position: relative;
+  padding: 10px;
+}
+
+.LeaderImg {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 7px;
+  border: 5px solid var(--primary-color);
+}
+
+.RankImage .Rank {
+  position: absolute;
+  background-color: var(--primary-color);
+  padding: 10px;
+  border-radius: 50%;
+  color: white;
+  font-weight: 900;
+  height: 40px;
+  width: 40px;
+  left: calc(50% - 20px);
+  bottom: 0;
+}
+
+.Crown {
+  width: 40px;
+  position: absolute;
+  left: calc(50% - 20px);
+  top: -10px;
+}
+
+.First .LeaderImg {
+  width: 170px;
+  height: 170px;
+}
+
+.Name {
+  font-size: 23px;
+  line-height: 1.5rem;
+  font-weight: 900;
+}
+
+.Email {
+  color: var(--secondry-Text-Color);
+}
+
+.Score {
+  color: var(--primary-color);
+}
+
+.StudentRow,
+.LeftInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.StudentRow {
+  padding: 18px 15px;
+  border-radius: 25px;
+  border: 1px solid var(--gray-color);
+}
+
+.LeftInfo {
+  gap: 15px;
+}
+
+.StudentRow .Image {
+  width: 63px;
+  height: 63px;
+  background-color: transparent;
+}
+
+.StudentRow .Image img {
+  max-width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.Info p {
+  color: var(--secondry-Text-Color);
+}
+
+.ViewAllButton {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  cursor: pointer;
+  border-top: 1px solid #eee;
+  font-size: 23px;
+  font-weight: 900;
+}
+
+.ViewAllButton a {
+  color: var(--primary-color);
+}
+
+/*Manage Student*/
+.TableWrapper {
+  overflow-x: auto;
+  border-radius: 8px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.SettingActivitySection .activityTable thead tr th {
+  padding: 15px;
+  /* background-color: var(--secondary-color); */
+  color: #c8c8c8;
+  line-height: 24px;
+  font-weight: 300;
+}
+
+.TableName {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.TableName img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/*Active Rooms*/
+.ActiveRooms,
+.EndedRooms,
+.ActiveGames {
+  padding: 20px 15px;
+  border-radius: 11px;
+  border: 1px solid var(--gray-color);
+  background-color: white;
+}
+
+.ActiveRooms,
+.EndedRooms h2 {
+  color: var(--primary-color);
+  line-height: 1.4rem;
+}
+
+.ActiveContainer,
+.EndedContainer {
+  width: 100%;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.Active,
+.Ended {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 8px;
+}
+
+.Active .ActiveRoom,
+.Ended .EndRoom {
+  flex: 1 1 49%;
+  margin: 5px;
+}
+
+/* Single Game*/
+.SingleGameContainer .StatusIntroduction h3:first-child,
+.LeaderBoardContainer .StatusIntroduction h3:first-child {
+  color: black;
+  background-color: var(--secondary-color);
+}
+
+.SingleGameContainer .StatusIntroduction h3:nth-child(2),
+.LeaderBoardContainer .StatusIntroduction h3:nth-child(2) {
+  color: black;
+  background-color: #f59e0b33;
+}
+
+.SingleGame {
+  width: 100%;
+  padding: 15px 20px;
+}
+
+.SingleGame h1 {
+  padding: 10px;
+  color: var(--primary-color);
+}
+
+.ImagesDesc {
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  align-items: center;
+  gap: 10px;
+}
+
+.Images {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0;
+  margin-right: 10px;
+}
+
+.Images img {
+  width: 50px;
+  margin-left: -15px;
+  z-index: 10;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.Images img:first-child {
+  margin-left: 0;
+}
+
+.SingleGame p:nth-child(2) {
+  display: none;
+}
+
+.GameBigContainer {
+  padding: 10px;
+}
+
+.GameBigContainer h2 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.GameOverviewContainer {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.GameOverviewContainer .GameContainer {
+  flex: 1;
+  border: 1px solid var(--gray-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.GameOverviewContainer .GameContainer .Icon {
+  width: 55px;
+  text-align: center;
+  height: 39%;
+  margin-left: 10px;
+  position: relative;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+}
+
+.icon-svg {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.icon-svg:nth-child(2) {
+  transform: translate(10px, 10px);
+}
+
+.Desc {
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 200px;
+  margin: 10px;
+}
+
+.Desc h3 {
+  font-size: 23px;
+  font-weight: bold;
+  color: #333;
+  margin: 0 0 8px;
+}
+
+.Desc p {
+  font-size: 16px;
+  margin: 0;
+  font-weight: 900;
+  color: var(--primary-color);
+}
+
+.Desc span {
+  font-size: 18px;
+  color: var(--primary-color);
+}
+
+.GameContainer .GameImage {
+  flex: 0 0 100px;
+  height: 100px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.GameContainer .GameImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.GameContainer .Desc {
+  flex: 1;
+  margin-left: 15px;
+}
+
+.GameContainer .Desc h3 {
+  font-size: 23px;
+  line-height: 29px;
+  font-weight: 500;
+  margin: 0 0 10px;
+  color: var(--primary-color);
+}
+
+.GameContainer .Desc p {
+  font-size: 16px;
+  color: #555;
+  display: flex;
+  align-items: center;
+}
+
+.GameContainer .Desc span {
+  margin-left: 5px;
+  font-size: 14px;
+  color: #333;
+  margin-right: 5px;
+}
+
+.GameContainer .Avg {
+  text-align: center;
+  margin-left: 20px;
+  flex-shrink: 0;
+}
+
+.GameContainer .Avg h3 {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+  color: black;
+}
+
+.GameContainer .Avg p {
+  font-size: 14px;
+  color: var(--primary-color);
+  margin-top: 5px;
+}
+
+.Icon p a {
+  margin: 0;
+  padding: 10px;
+}
+
+.Icon:hover p a {
+  color: white !important;
+}
+
+/*Single Room  */
+.RoomsSection {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  width: 100%;
+  gap: 20px;
+}
+
+.StudentInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
+}
+
+.StudentInfo img {
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.StudentInfo h2 {
+  color: var(--primary-color);
+  line-height: 1.5rem;
+}
+
+.StudentInfo p {
+  color: var(--primary-color);
+  font-weight: 500;
+  line-height: 1.4rem;
+}
+
+.QuestionsInfo {
+  padding: 10px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.QuestionsInfo span {
+  color: var(--primary-color);
+}
+
+td button {
+  background-color: transparent;
+  padding: 10px 20px;
+  color: var(--primary-color);
+  font-weight: 900;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+}
+
+/*Student pop up*/
+.StudentPopupOverlay {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 15;
+}
+
+.QuestionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.QuestionContent h2 {
+  color: #030303;
+}
+
+.CloseBtn {
+  border: none;
+  background-color: transparent;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.QuestionHeaderDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: #f1f6fe; */
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.questions {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.Sum .score {
+  color: red;
+  font-weight: bold;
+}
+
+.QuestionContent h2 {
+  margin-bottom: 15px;
+}
+
+.QuestionOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Option {
+  border: 1px solid #cac8c8;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.OptionIndicator {
+  font-weight: bold;
+}
+
+.Option.Correct {
+  border-color: green;
+  color: green;
+
+  background-color: #e6ffe6;
+}
+
+.Option.Incorrect {
+  border-color: red;
+  color: red;
+  background-color: #ffe6e6;
+}
+
+@media (max-width: 600px) {
+  .Popup {
+    width: 90%;
+  }
+
+  .question-header h1 {
+    font-size: 18px;
+  }
+
+  .Option {
+    padding: 8px;
+  }
+}
+
+/*My Folders */
+.MyFoldersBigContainer,
+.MyPoolsBigContainer {
+  border: 1px solid var(--gray-color);
+  border-radius: 35px;
+  margin: 15px;
+  padding: 40px 15px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.MyFoldersBigContainer {
+  flex-direction: column;
+}
+
+.MyFoldersContent,
+.MyPoolsContent {
+  width: 93%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.MyPools {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.MyFoldersContent.GridView {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.MyFoldersContent.FlexView {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.MyFoldersContent .Grade {
+  padding: 25px 20px;
+}
+
+.FolderClass,
+.PoolClass {
+  flex: 1 1 calc(47% - 50px);
+  border-radius: 17px;
+  background-color: #fcfdfe;
+}
+
+.MyPoolClass {
+  flex: 1 1 100%;
+}
+
+.Grade.MyPoolClass {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.MyFoldersContent.GridView .FolderClass,
+.MyPoolsContent .PoolClass {
+  width: 90%;
+}
+
+.FolderClass .Icon svg,
+.MyPoolsContent .FolderClass .Icon svg {
+  width: 50px;
+  height: 50px;
+  background-color: var(--secondary-color);
+  padding: 5px;
+}
+
+.FolderContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 75%;
+}
+
+.FolderHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-bottom: 10px;
+}
+
+.FolderHeader h2 {
+  font-size: 21px;
+  margin: 0;
+}
+
+.FolderMain,
+.PoolMain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  color: #030303 !important;
+}
+
+.PoolMain {
+  justify-content: flex-end !important;
+}
+
+.FolderMain .Left {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.FolderMain .Right {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.PoolMain .Right span p {
+  color: var(--primary-color);
+}
+
+.Pool p {
+  background-color: transparent !important;
+}
+
+.FolderMain .Right svg {
+  width: 18px;
+  height: 18px;
+  fill: #f59e0b;
+}
+
+.FolderMain .Right p {
+  margin: 0;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+}
+
+.MyFolderHeader {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.ViewToggle {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.ToggleButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.ToggleButton svg {
+  width: 20px;
+  height: 20px;
+}
+
+.ToggleButton.active {
+  border-color: #4c6bb6;
+  background-color: #eaf1ff;
+}
+
+.ToggleButton:hover {
+  background-color: #f0f4ff;
+}
+
+/*
+Single Pool
+*/
+.MainPollContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  border: 1px solid var(--gray-color);
+  border-radius: 15px;
+  background-color: white;
+  flex-wrap: wrap;
+}
+
+.MainPollContainer .QuestionContainer {
+  flex: 1 1 25%;
+  padding: 20px;
+  border-right: 1px solid var(--gray-color);
+}
+
+.QuestionDetailsContainer {
+  flex: 1 1 70%;
+  padding: 0px 20px;
+  /* height: 100%; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.QuestionDetailsContainer .NoQuestionDetails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  display: none;
+}
+
+.NoQuestionDetails img {
+  width: 200px;
+  height: 200px;
+}
+
+.QuestionDetailsContainer .NoQuestionDetails p {
+  color: var(--primary-color);
+  line-height: 1.4rem;
+  text-align: center;
+}
+
+.TitleQuestions span svg:nth-child(2) {
+  display: block;
+}
+
+.TitleQuestions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.TitleQuestions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.TitleQuestions span {
+  display: flex;
+  align-items: center;
+}
+
+.TitleQuestions h2 {
+  color: var(--primary-color);
+}
+
+.TitleQuestions span svg {
+  margin-left: 25px;
+}
+
+.TitleQuestions span svg:nth-child(2) {
+  display: none;
+}
+
+.QuestionsList h2 {
+  font-size: 18px;
+  color: var(--primary-color);
+}
+
+.QuestionItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 10px;
+  /* border: 1px solid #ddd; */
+  border-radius: 5px;
+  /* background: #f9f9f9; */
+  /* margin-bottom: 10px; */
+}
+
+.ParentRightQuestion {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  flex-grow: 1;
+  /* background-color: var( --lighting-color-one); */
+  /* margin-bottom: 10px; */
+}
+
+.QuestionNumber {
+  width: 24px;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--lighting-color-one);
+  color: var(--primary-color);
+  border-radius: 6px;
+}
+
+.QuestionText {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.ParentIems {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  padding: 10px;
+  /* border: solid; */
+}
+
+.ParentCenter p {
+  margin-bottom: 10px;
+}
+
+.actions {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.actions button.delete {
+  color: #e74c3c;
+}
+
+.m-left-right {
+  margin: 0 10px;
+}
+
+.m-t-center {
+  display: block;
+  margin: auto;
+}
+
+.delete-choice {
+  width: 25%;
+  padding: 8px;
+}
+
+.Presintagechoice span {
+  font-size: 13px;
+}
+
+.Presintagechoice span:nth-child(2) {
+  padding: 0;
+}
+
+.Header h1 {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.createNewPoll {
+  width: 301px;
+  height: 305px;
+}
+
+.PollDetails {
+  flex: 2;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+}
+
+.question-title h2 {
+  font-size: 16px;
+  margin-bottom: 1rem;
+}
+
+.FormField {
+  width: 30%;
+}
+
+.upload-photo button {
+  padding: 10px 15px;
+  background-color: #5e72e4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.choices {
+  margin-top: 20px;
+}
+
+.choice-header {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.choice-list {
+  list-style: none;
+}
+
+.choice-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.choice-list input[type="text"] {
+  flex: 1;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  background-color: var(--background-light);
+}
+
+.Choices {
+  /* margin-right: 10px; */
+  /*   */
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 15px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 25px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 0px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+input:checked + .slider {
+  background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(21px);
+}
+
+.toggles label {
+  margin-right: 10px;
+}
+
+.delete-choice {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 15%;
+  /* background-color: var(--background-light); */
+  padding: 8px;
+  border-radius: 5px;
+  /* font-size: 11px; */
+  /* border: solid; */
+}
+
+.Presintagechoice {
+  padding: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: var(--background-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Presintagechoice span {
+  padding: 0 10px;
+}
+
+.Presintagechoice span:nth-child(2) {
+  padding: 0 10px;
+
+  color: var(--darking-color);
+}
+
+.add-answer {
+  margin-left: 1.3rem;
+  padding: 10px 15px;
+  background-color: #fff;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  border: solid #ccc 1px;
+}
+
+.upload-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.upload-input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-icon {
+  width: 25px;
+  height: 25px;
+  margin-bottom: 8px;
+}
+
+.upload-box span {
+  font-size: 16px;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.upload-box:hover {
+  background-color: #9aaed4;
+}
+
+.bottom-icons-Qustions {
+  width: 100%;
+  margin: auto 0;
+  margin-left: auto;
+  /* border: solid; */
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.bottom-icons-Qustions span {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: var(--lighting-color-one);
+  border-radius: 50%;
+  font-size: 11px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+
+/************************************/
+.opened {
+  display: flex !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+.m-t-center {
+  display: block;
+  margin: auto;
+}
+
+.Action {
+  background: var(--light-color-two);
+}
+
+.border-2 {
+  display: inline-block;
+  width: 2px;
+  height: 13px;
+  background-color: #333;
+}
+
+.parentInputs {
+  width: 100%;
+  position: relative;
+}
+
+.not-at-all {
+  width: 100%;
+  /* background-color: #d7e0ff; */
+}
+
+.parentInputs span {
+  position: absolute;
+  background-color: #d7e0ff;
+  display: inline-block;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  color: #ccc;
+  padding: 6px;
+  font-size: 13px;
+}
+
+.m-left-right {
+  margin: 0 10px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fc;
+  color: #333;
+}
+
+.parentPollContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+}
+
+.StudentPopupOverlay {
+  display: none;
+}
+
+.layerPopup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #d9d9d980;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.createNewPoll {
+  width: 401px;
+  height: 405px;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.parentImage {
+  width: 68%;
+  height: 60%;
+}
+
+.parentImage img {
+  width: 100%;
+  height: 100%;
+}
+
+.parentLinksNewPoll {
+  width: 100%;
+  /* border: solid; */
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.parentLinksNewPoll a {
+  padding: 9px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.parentLinksNewPoll .close {
+  color: var(--light-red);
+}
+
+.parentLinksNewPoll .copyLink {
+  background-color: var(--darking-color);
+  color: var(--background-light);
+}
+
+.Header {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.Header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #5e72e4;
+}
+
+.post-button {
+  background-color: #5e72e4;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.PollContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.QuestionsList {
+  flex: 1;
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.TitleQuestions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.TitleQuestions span {
+  display: flex;
+  align-items: center;
+}
+
+.TitleQuestions span svg {
+  margin-left: 25px;
+}
+
+.TitleQuestions span svg:nth-child(2) {
+  display: none;
+}
+
+.QuestionsList h2 {
+  font-size: 18px;
+
+  color: var(--darking-color);
+}
+
+.QuestionItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 10px;
+  /* border: 1px solid #ddd; */
+  border-radius: 5px;
+  /* background: #f9f9f9; */
+  /* margin-bottom: 10px; */
+}
+
+.ParentRightQuestion {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  /* background-color: var( --lighting-color-one); */
+  /* margin-bottom: 10px; */
+}
+
+.QuestionNumber {
+  width: 24px;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--lighting-color-one);
+  color: #4c6bb6;
+  border-radius: 6px;
+}
+
+.QuestionText {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.ParentIems {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  /* border: solid; */
+}
+
+.actions {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #5e72e4;
+  margin-right: 10px;
+}
+
+.actions button.delete {
+  color: #e74c3c;
+}
+
+.PollDetails {
+  flex: 2;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.upload-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.question-title h2 {
+  font-size: 16px;
+  margin-bottom: 1rem;
+}
+
+.question-title textarea {
+  width: 69%;
+  height: 120px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 0px;
+  font-size: 14px;
+  resize: none;
+  background: var(--background-light);
+}
+
+.FormField {
+  width: 30%;
+}
+
+.upload-photo button {
+  padding: 10px 15px;
+  background-color: #5e72e4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.choices {
+  margin-top: 20px;
+}
+
+.choice-header {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.choice-list {
+  list-style: none;
+}
+
+.choice-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.choice-list input[type="text"] {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: var(--background-light);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 15px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 25px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 0px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+input:checked + .slider {
+  background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(21px);
+}
+
+.toggles label {
+  margin-right: 10px;
+}
+
+.delete-choice {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 15%;
+  /* background-color: var(--background-light); */
+  padding: 8px;
+  border-radius: 5px;
+  /* font-size: 11px; */
+  /* border: solid; */
+}
+
+.Presintagechoice {
+  padding: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: var(--background-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Presintagechoice span {
+  padding: 0 10px;
+}
+
+.Presintagechoice span:nth-child(2) {
+  padding: 0 10px;
+
+  color: var(--darking-color);
+}
+
+.add-answer {
+  margin-left: 1.3rem;
+  padding: 10px 15px;
+  background-color: #fff;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  border: solid #ccc 1px;
+}
+
+.upload-container {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  background-color: var(--background-light);
+  padding: 10px;
+  border-radius: 10px;
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+  width: 30%;
+  height: 120px;
+}
+
+.upload-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.upload-box {
+  display: inline-block;
+  position: relative;
+  width: 80%;
+  height: 50px;
+  background-color: var(--darklight);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.upload-input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-icon {
+  width: 25px;
+  height: 25px;
+  margin-bottom: 8px;
+}
+
+.upload-box span {
+  font-size: 16px;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.upload-box:hover {
+  background-color: #9aaed4;
+}
+
+.bottom-icons-Qustions {
+  width: 100%;
+  margin: auto 0;
+  margin-left: auto;
+  /* border: solid; */
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.bottom-icons-Qustions span {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: var(--lighting-color-one);
+  border-radius: 50%;
+  font-size: 11px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+
+#AddQuestionDetails {
+  display: none;
+}
+
+@media (max-width: 1300px) {
+  .MainPollContainer .QuestionContainer {
+    flex: 1 1 50%;
+  }
+
+  .QuestionDetailsContainer {
+    flex: 1 1 50%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .PollContainer {
+    flex-direction: column;
+  }
+
+  .MainPollContainer .QuestionContainer {
+    flex: 1 1 100%;
+  }
+
+  /* .QuestionDetailsContainer {
+    flex: 1 1 100%;
+  } */
+}
+
+@media (max-width: 768px) {
+  .PollContainer {
+    flex-direction: column;
+  }
+
+  .actions {
+    width: 70%;
+  }
+
+  .TitleQuestions span svg:nth-child(2) {
+    display: block;
+  }
+}
+
+@media (max-width: 425px) {
+  .parentPollContainer {
+    padding: 1px;
+  }
+
+  .QuestionsList {
+    flex: 1;
+    background: #fff;
+    border-radius: 10px;
+    padding: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .upload-section {
+    flex-direction: column;
+  }
+
+  .question-title textarea {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .upload-container {
+    width: 100%;
+  }
+
+  .actions {
+    width: 100%;
+  }
+
+  .Choices {
+    width: 50%;
+  }
+
+  .PollDetails {
+    flex: 2;
+    background: #fff;
+    border-radius: 10px;
+    padding: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .delete-choice {
+    width: 25%;
+    padding: 8px;
+  }
+
+  .Presintagechoice span {
+    font-size: 13px;
+  }
+
+  .Presintagechoice span:nth-child(2) {
+    padding: 0;
+  }
+
+  .Header h1 {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+  .createNewPoll {
+    width: 301px;
+    height: 305px;
+  }
+}
+
+@media (max-width: 320px) {
+  .parentPollContainer {
+    padding: 8px 0px;
+  }
+
+  .post-button {
+    display: none;
+  }
+
+  .QuestionsList {
+    flex: 1;
+    background: #fff;
+    border-radius: 10px;
+    padding: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .upload-section {
+    flex-direction: column;
+  }
+
+  .question-title textarea {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .upload-container {
+    width: 100%;
+  }
+
+  .actions {
+    width: 100%;
+  }
+
+  .Choices {
+    width: 50%;
+  }
+
+  .toggles label {
+    margin-right: 7px;
+    font-size: 12px;
+  }
+
+  .parentChoices {
+    margin-bottom: 10px;
+  }
+
+  .delete-choice {
+    width: 33%;
+    padding: 8px;
+  }
+
+  .Presintagechoice span {
+    font-size: 13px;
+  }
+
+  .Presintagechoice span:nth-child(2) {
+    padding: 1px;
+  }
+
+  .choice-list li {
+    gap: 3px;
+  }
+
+  /* .parentInputs {
+    width: 90%;
+    position: relative;
+  } */
+  /* .parentInputs {
+    width: 79%;
+    position: relative;
+    border: solid;
+  } */
+}
+
+/* page 1 home Student New */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+.homeStudentContainer {
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+
+.homeStudentHeader {
+  margin-bottom: 20px;
+}
+
+.homeStudentLogo img {
+  width: 150px;
+  /* border: solid; */
+}
+
+.homeStudentMain {
+  margin-top: 20px;
+}
+
+.homeStudentTitle {
+  font-size: 2.5rem;
+  color: #4455b6;
+  margin: 0;
+}
+
+.homeStudentSubtitle {
+  margin: 10px 0 20px;
+  font-size: 1rem;
+  color: #6a6f85;
+}
+
+.homeStudentImageContainer {
+  margin: 20px auto;
+  width: 80%;
+  max-width: 400px;
+}
+
+.homeStudentImageContainer img {
+  width: 80%;
+  border-radius: 20px;
+}
+
+.homeStudentButton {
+  background-color: #4455b6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.homeStudentButton:hover {
+  background-color: #3a4da3;
+}
+
+@media (max-width: 768px) {
+  .homeStudentTitle {
+    font-size: 2rem;
+  }
+
+  .homeStudentSubtitle {
+    font-size: 0.9rem;
+  }
+
+  .homeStudentButton {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .homeStudentTitle {
+    font-size: 1.8rem;
+  }
+
+  .homeStudentSubtitle {
+    font-size: 0.8rem;
+  }
+
+  .homeStudentButton {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+/* page 2  */
+
+.InvitedStudentContainer {
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+
+.InvitedStudentHeader {
+  margin-bottom: 20px;
+}
+
+.InvitedStudentLogo img {
+  width: 150px;
+}
+
+.InvitedStudentMain {
+  margin-top: 20px;
+}
+
+.InvitedStudentTitle {
+  font-size: 1.8rem;
+  color: #000;
+  margin: 0;
+  width: 80%;
+  text-align: center;
+  margin: auto;
+}
+
+.InvitedStudentHighlight {
+  color: #4455b6;
+  font-weight: bold;
+}
+
+.InvitedStudentSubtitle {
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+.InvitedStudentForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.InvitedStudentInputGroup {
+  margin: 10px 0;
+  width: 80%;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.InvitedStudentInputGroup label {
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+  width: 20%;
+}
+
+.InvitedStudentInputGroup input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 70%;
+}
+
+.InvitedStudentAvatarSection {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 55%;
+}
+
+.InvitedStudentAvatarOptions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.InvitedStudentAvatar,
+.InvitedStudentAvatarUpload {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4455b6;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.InvitedStudentAvatarTwo {
+  background-color: #d7e0ff;
+  color: #4c6bb6;
+}
+.InvitedStudentAvatarUpload {
+  background-color: transparent;
+  border: 2px dotted #4455b6;
+}
+
+.InvitedStudentUploadLink {
+  display: block;
+  margin-top: 10px;
+  color: #4455b6;
+  text-decoration: underline;
+}
+
+.InvitedStudentButton {
+  background-color: #4455b6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.InvitedStudentButton:hover {
+  background-color: #3a4da3;
+}
+
+@media (max-width: 768px) {
+  .InvitedStudentTitle {
+    font-size: 1.5rem;
+  }
+
+  .InvitedStudentButton {
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .InvitedStudentTitle {
+    font-size: 1.2rem;
+  }
+
+  .InvitedStudentInputGroup input {
+    font-size: 0.9rem;
+  }
+
+  .InvitedStudentButton {
+    padding: 6px 12px;
+  }
+}
+/* page 3 */
+
+.LoadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f8f9fc;
+  font-family: Arial, sans-serif;
+}
+
+.LoadingContainer img {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.LoadingContainer h1 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.LoadingParagraph {
+  font-size: 14px;
+  color: #777;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.LoadingProgress {
+  width: 80%;
+  max-width: 300px;
+  height: 5px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.LoadingProgress .progress-bar {
+  width: 50%;
+  height: 100%;
+  background-color: #4a90e2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .LoadingContainer h1 {
+    font-size: 20px;
+  }
+
+  .LoadingContainer img {
+    width: 80px;
+  }
+
+  .LoadingParagraph {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .LoadingContainer h1 {
+    font-size: 18px;
+  }
+
+  .LoadingParagraph {
+    font-size: 10px;
+  }
+}
+
+/* page 4 */
+
+.DisplayRow {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4ff;
+  margin: 0;
+  padding: 20px;
+}
+
+.HomeStudentContainer .Boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 7px;
+  color: var(--primary-color);
+  width: 100%;
+  margin-top: 10px;
+}
+
+.HomeStudentContainer .Box {
+  padding: 17px 20px;
+  background-color: white;
+  width: calc(100% / 3 - 20px);
+  border-radius: 6px;
+  display: flex;
+  align-items: flex-center;
+  gap: 20px;
+  border: 1px solid var(--gray-color);
+}
+
+.HomeStudentLeft {
+  /* border: solid; */
+  width: 60%;
+  height: 98%;
+}
+.ScourNumber {
+  color: var(--darking-color);
+}
+.IconText h5 {
+  color: #000;
+  margin-bottom: 10px;
+}
+.HomeStudentContainer {
+  display: flex;
+  align-items: start;
+  width: 95%;
+  margin-left: auto;
+  height: calc(88vh - 50px);
+  /* border: solid; */
+}
+
+.HomeStudentParagraph-welcome {
+  font-size: 20px;
+  color: #333;
+  margin: 15px 0;
+}
+
+.HomeStudentParagraph-name {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+.HomeStudentContainer-missions h3 {
+  color: var(--primary-color);
+}
+.HomeStudentContainer-cards {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 900px;
+  margin: 20px 0;
+}
+
+.HomeStudentParagraph-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 30%;
+}
+
+.HomeStudentContainer-missions {
+  background: #fff;
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+.ParentImageStudentNoBooks {
+  width: 50%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto !important;
+}
+.ParentImageStudentNoBooks img {
+  width: 62%;
+  height: 100%;
+  object-fit: contain;
+}
+.HomeStudentContainer-missions p {
+  text-align: center;
+  color: var(--gray-color);
+}
+
+.HomeStudentContainer-stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40%;
+  max-width: 900px;
+  height: 100%;
+}
+
+.HomeStudentParagraph-statistics,
+.HomeStudentParagraph-top-rank {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  height: 47%;
+  margin: auto;
+  color: var(--gray-color);
+}
+.HomeStudentParagraph-top-rank h3 {
+  color: var(--primary-color);
+}
+.HomeStudentParagraph-top-rank p {
+  /* line-height: 250px; */
+  text-align: center;
+}
+.HomeStudentParagraph-statistics {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .HomeStudentContainer-cards,
+  .HomeStudentContainer-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .HomeStudentParagraph-card,
+  .HomeStudentParagraph-statistics,
+  .HomeStudentParagraph-top-rank {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+
+/* page 5 */
+
+.RowsHomeStudent {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.RowHomeStudent {
+  border: 1px solid var(--gray-color);
+  border-radius: 9px;
+  padding: 16px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+.RowHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-bottom: 12px; */
+  width: 15%;
+  height: 80px;
+}
+
+.RowContainer {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  width: 95%;
+}
+.ROWDescrption {
+  flex: 1;
+}
+.Durations {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary-color);
+  font-size: 12px;
+  justify-content: space-between;
+}
+.DurationsContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.dura {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.Durations p {
+  margin: 0;
+}
+.CreateRooms {
+  /* margin-top: 12px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ShowIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5%;
+}
+.ShowIcon span {
+  position: relative;
+}
+.Games-Status {
+  font-size: 14px;
+  color: var(--primary-color);
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+.para {
+  display: flex;
+  gap: 5px;
+}
+.Games-Status p {
+  margin: 0;
+  padding: 10px 8px;
+  border-radius: 8px;
+}
+.Games-Status p:nth-child(2) {
+  background-color: #22ad5c33;
+}
+
+.Games-Status p {
+  margin: 0;
+  padding: 10px 8px;
+  border-radius: 8px;
+}
+
+.DisplayRow {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.HomeStudentContainer .Boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 7px;
+  color: var(--primary-color);
+  width: 100%;
+  margin-top: 10px;
+}
+
+.HomeStudentContainer .Box {
+  padding: 17px 20px;
+  background-color: white;
+  width: calc(100% / 3 - 20px);
+  border-radius: 6px;
+  display: flex;
+  align-items: flex-center;
+  gap: 20px;
+  border: 1px solid var(--gray-color);
+}
+
+.HomeStudentLeft {
+  /* border: solid; */
+  width: 60%;
+  height: 98%;
+}
+.ScourNumber {
+  color: var(--darking-color);
+}
+.IconText h5 {
+  color: #000;
+  margin-bottom: 10px;
+}
+.HomeStudentContainer {
+  display: flex;
+  align-items: start;
+  width: 95%;
+  margin-left: auto;
+  height: calc(88vh - 50px);
+}
+
+.HomeStudentParagraph-welcome {
+  font-size: 20px;
+  color: #333;
+  margin: 15px 0;
+}
+
+.HomeStudentParagraph-name {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+.HomeStudentContainer-missions h3 {
+  color: var(--primary-color);
+}
+.HomeStudentContainer-cards {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 900px;
+  margin: 20px 0;
+}
+
+.HomeStudentParagraph-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 30%;
+}
+
+.HomeStudentContainer-missions {
+  background: #fff;
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+/* .backGroundTransparent {
+  background: transparent;
+} */
+.ParentImageStudentNoBooks {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto !important;
+}
+.ParentImageStudentNoBooks img {
+  width: 62%;
+  height: 100%;
+  object-fit: contain;
+}
+.HomeStudentContainer-missions p {
+  text-align: center;
+  /* color: var(--gray-color); */
+}
+
+.HomeStudentContainer-stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40%;
+  max-width: 900px;
+  height: 100%;
+}
+
+.HomeStudentParagraph-statistics,
+.HomeStudentParagraph-top-rank {
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  width: 90%;
+  height: 47%;
+  margin: auto;
+  color: var(--gray-color);
+  /* border: solid; */
+}
+.HomeStudentParagraph-top-rank h3 {
+  color: var(--primary-color);
+  /* border: solid; */
+}
+.HomeStudentParagraph-top-rank p {
+  /* line-height: 250px; */
+  text-align: center;
+  /* border: solid; */
+}
+.HomeStudentParagraph-statistics {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: solid; */
+}
+
+.MyFoldersHeaderStudent,
+.MyTasksHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  color: var(--primary-color);
+}
+.GamePolls,
+.showAllIcons,
+.SortBy {
+  display: flex;
+  gap: 15px;
+  /* align-items: center; */
+  /* height: 0; */
+}
+.showAllIcons p {
+  color: var(--primary-color);
+}
+.HomeStudentParagraph-top-rank .RowsHomeStudent {
+  padding: 0;
+}
+
+.GameHeading h2 {
+  font-size: 15px;
+  /* width: 60%; */
+  color: #000;
+  margin: 10px 0;
+}
+.HomeStudentParagraph-top-rank .GameHeading {
+  width: 60%;
+}
+.para p {
+  padding: 0;
+}
+.HomeStudentContainer-missions .GameHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.btn.primary {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  width: 100px;
+  margin-bottom: 10px;
+}
+.startbtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.DurationsLeft {
+  width: 60%;
+}
+.parentImageStudent {
+  width: 100%;
+  height: 100%;
+}
+.parentImageStudent img {
+  width: 100%;
+  height: 100%;
+}
+
+.HomeStudentLeft .Box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.HomeStudentLeft .para p {
+  background-color: transparent;
+  color: var(--primary-color);
+}
+.ParentRank {
+  width: 20%;
+  /* border: solid; */
+}
+.ParentRank p {
+  color: #000;
+}
+.ParentRank .StudentRankPage {
+  color: var(--darking-color);
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .HomeStudentContainer-cards,
+  .HomeStudentContainer-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .HomeStudentParagraph-card,
+  .HomeStudentParagraph-statistics,
+  .HomeStudentParagraph-top-rank {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+
+/* page 6 */
+.classesContainerWinner {
+  width: 94%;
+  margin-left: auto;
+}
+.cardDetailsStudent {
+  display: flex;
+  align-items: center;
+  /* border: solid; */
+  justify-content: space-between;
+  width: 100%;
+}
+.ParentCardStudentPage {
+  /* border: solid; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.ParentCardStudentPage span {
+  font-size: 13px;
+}
+.ImageInClassStudent {
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 50%;
+}
+
+/* Intro To Ai */
+.IntroToAiContainer {
+  /* border: solid; */
+  width: 93%;
+  margin-left: auto;
+}
+.IntroToAiParentToTitles {
+}
+.IntroToAiHeader {
+  color: var(--darking-color);
+}
+.ParentInTopHeader {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 20px;
+}
+.IntroToAiParentToTitles .ParentImages {
+  width: 30%;
+  /* border: solid; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+}
+.IntroToAiParentToTitles .ParentImage {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: 4px solid #ffffff;
+  margin: 0px -9px;
+  border: solid;
+}
+
+.IntroToAiParentToTitles .ParentImage:nth-child(1) {
+  margin: 0px;
+}
+
+.IntroToAiParentToTitles .ParentImages img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.ParentInTopHeader .IntroToAiParagraph {
+  font-size: 11px;
+  text-decoration: none;
+}
+.IntroToAiBottom {
+  margin-top: 1.9rem;
+  padding-top: 40px;
+  /* border: solid; */
+}
+.IntroToAiAvatars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* border: solid; */
+  gap: 40px;
+  margin-top: 1.9rem;
+}
+.IntroToAiAvatars .WinnersStudentsPage {
+  border-radius: 50%;
+  border: solid;
+  width: 127.88px;
+  height: 127.88px;
+  border: 3px solid #4c6bb6;
+  position: relative;
+  /* margin-bottom: 2rem; */
+}
+.IntroToAiAvatars .WinnersStudentsPage img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.WinnersStudentsPage .Number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  background-color: var(--primary-color);
+  color: var(--background-light);
+  position: absolute;
+  left: 50%;
+  bottom: -11%;
+  transform: translate(-50%);
+}
+.WinnersStudentsPage .tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border-radius: 50%; */
+  /* width: 25px;
+  height: 25px; */
+  /* background-color: var(--primary-color);
+  color: var(--background-light); */
+  position: absolute;
+  left: 50%;
+  top: -26%;
+  transform: translate(-50%);
+}
+
+.ParentWinnersStudentsPage .contentInfo {
+  /* border: solid; */
+  text-align: center;
+  margin-top: 1.3rem;
+}
+.ParentWinnersStudentsPage .contentInfo h3 {
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+.ParentWinnersStudentsPage .contentInfo p {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+.ParentWinnersStudentsPage .contentInfo span {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+.MoveIngTopWinner {
+  transform: translatey(-30px);
+}
+
+.IntroToAiTable {
+  width: 70%;
+  margin: auto;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+.IntroToAiTable th,
+.IntroToAiTable td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid transparent;
+}
+.IntroToAiTable tr {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.IntroToAiTable th {
+  background-color: #f1f1f1;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .IntroToAiTopPlayers {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* page7 */
+.Durations .ParentImages {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 35%;
+}
+.ParentDura {
+  display: flex;
+  gap: 10px;
+}
+.Durations .ParentImages .ParentImage {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+.Durations .ParentImages .ParentImage img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: solid;
+  margin: 0 -10px;
+}
+.DurationsParentBottom{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

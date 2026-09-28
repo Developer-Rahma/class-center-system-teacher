@@ -1,0 +1,1014 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #4c6bb6;
+  --secondary-color: #d7e0ff;
+  --gray-color: #dddddd;
+  --secondry-Text-Color: #8a8a8a;
+}
+@media screen and (max-width: 1340px) {
+  .sideBar {
+    width: 200px;
+  }
+
+  .GamesMyFolderContainer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .GamesMyFolders .GamesPolls {
+    width: 90%;
+  }
+
+  .ROWDescrption h2 {
+    font-size: 13px;
+  }
+
+  .GamesMyFolderContainer .MyFoldersMyTasks {
+    width: 95%;
+  }
+
+  .dropdown {
+    padding: 0;
+  }
+
+  .Box {
+    width: 47%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+
+
+  .SearchSort {
+    flex-direction: column;
+  }
+
+  .Search {
+    max-width: 90%;
+  }
+
+  .Grade {
+    max-width: 90%;
+  }
+
+  .GameStatusHeading {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .Rows {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .sideBar {
+    width:55%;
+    display: none;
+  }
+
+  .logo img {
+    transform: scale(0.7);
+  }
+
+}
+
+@media (max-width: 550px) {
+
+  .Grade .Icon svg {
+    width: 34px;
+  }
+
+  .Grade {
+    width: 47%;
+    padding: 5px;
+  }
+
+  .Grade:nth-child(5) p {
+    font-size: 10px;
+    width: 95%;
+  }
+
+  .Rows {
+    padding: 0;
+  }
+
+  .Grade p {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+  }
+
+  .MyFoldersHeader {
+    /* flex-direction: column; */
+    gap: 10px;
+  }
+
+  .MyFoldersHeader h2 {
+    font-size: 15px;
+  }
+
+  .Row {
+    padding: 15px 5px;
+    margin-bottom: 10px;
+  }
+
+  .Image {
+    width: 83%;
+    height: 60%;
+  }
+
+  .Image svg {
+    width: 60px;
+    height: 70px;
+  }
+
+  .Games-Status p {
+    padding: 6px;
+  }
+}
+
+@media screen and (max-width:400px) {
+  .Durations p {
+    font-size: 10px;
+  }
+
+  .Durations {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  /* side bar */
+  .HeaderContainer {
+    /* width: 94%; */
+    padding-top: 0px;
+    /* margin-left: auto; */
+  }
+  .Title {
+    display: flex;
+    gap: 5px;
+  }
+  /* Create New Class Page*/
+
+  .ParentContainerForm {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .MyClassesContainer h1 {
+    font-size: 1.8rem;
+  }
+  .SummaryBox {
+    height: 100%;
+  }
+  .classCard h3 {
+    font-size: 20px;
+  }
+  .cardDetails span {
+    font-size: 14px;
+    color: #33363f;
+  }
+}
+@media screen and (max-width: 768px) {
+  .pages {
+    margin-top: 3rem;
+  }
+  /* Create New Class Page*/
+
+  .ClassContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+  }
+  .ParentContainerForm {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .MyClassesContainer h1 {
+    color: var(--primary-color);
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  .Steps {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  .ParentStep {
+    display: flex;
+    align-items: center;
+    /* flex-direction: column; */
+    gap: 10px;
+  }
+  .step {
+    border: solid;
+  }
+
+  .ParentStep span {
+    font-size: 0.6rem !important;
+  }
+  .Form {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    padding: 1px;
+  }
+
+  .ParentCreateClass {
+    flex-direction: column;
+    width: 100%;
+    gap: 2px;
+  }
+  .Form label,
+  .Form p {
+    width: 100%;
+    font-size: 1rem;
+  }
+  .Form input {
+    width: 90%;
+    margin: 3px;
+  }
+  .ParentImagesAvatars {
+    flex-direction: column;
+  }
+  .Avatars {
+    width: 100%;
+    justify-content: center;
+  }
+  .Avatar {
+    width: 60px;
+    height: 60px;
+  }
+  .CreateButton {
+    margin: 13px auto;
+  }
+
+  /* my class */
+
+  .classCard h3 {
+    font-size: 15px;
+  }
+  #MyTaskPopupOverlay .Popup {
+    padding: 10px 15px;
+    width: 284px;
+    height: 380px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .classesContainer {
+    padding: 20px 8px;
+    border-radius: 10px;
+  }
+  .classCardsContainer {
+    gap: 5px;
+    align-items: center;
+    padding: 10px 8px;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+  .classCard {
+    width: 90%;
+   
+    align-items: center;
+    padding: 8px;
+  }
+  .cardDetails span {
+    font-size: 12px;
+  }
+  .Introduction {
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+  .SearchButton {
+    flex-direction: column;
+    width: 100%;
+  }
+  .Search {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .SearchInput {
+    width: 100%;
+  }
+  .sortOptions {
+    display: flex;
+    align-items: center;
+    width: 89%;
+    justify-content: flex-start;
+    gap: 0px;
+  }
+  .sortOptions select {
+    width: 70%;
+  }
+  .sortOptions label {
+    width: 30%;
+  }
+  .DropDown {
+    width: 48%;
+    margin-bottom: 10px;
+  }
+  .StatusIntroduction {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+@media screen and (max-width: 560px) {
+  /* Create New Class Page*/
+
+  .ParentContainerForm {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .MyClassesContainer h1 {
+    color: var(--primary-color);
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  .Steps {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  .ParentStep {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .step {
+    border: solid;
+  }
+
+  .ParentStep span {
+    font-size: 0.6rem !important;
+  }
+  .Form {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    padding: 1px;
+  }
+
+  .ParentCreateClass {
+    flex-direction: column;
+    width: 100%;
+    gap: 2px;
+  }
+  .Form label,
+  .Form p {
+    width: 100%;
+    font-size: 1rem;
+  }
+  .Form input {
+    width: 99%;
+    margin: 3px;
+  }
+  .ParentImagesAvatars {
+    flex-direction: column;
+  }
+  .Avatars {
+    width: 100%;
+    justify-content: center;
+  }
+  .Avatar {
+    width: 38px;
+    height: 38px;
+  }
+
+  /*  */
+
+  .SummaryBox {
+    flex-direction: column;
+  }
+
+  /* home page */
+  .PageContainer {
+    width: 94%;
+  }
+  /* .IconText p {
+    display: none;
+  } */
+ 
+  .Box {
+    padding: 17px 8px;
+    align-items: center;
+    justify-content: center;
+  }
+  .IconText h5 {
+    margin: auto;
+  }
+  .GamesMyFolders {
+    margin-top: 1.3rem;
+  }
+  .GamesMyFolders .GamesPolls {
+    width: 97%;
+    padding: 10px 8px;
+  }
+  .GamesMyFolderContainer {
+    width: 98%;
+  }
+  .showAllIcons {
+    align-items: center;
+  }
+  .SearchSort {
+    padding: 5px;
+  }
+  .Search {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .SortBy {
+    width: 100%;
+    padding: 10px;
+  }
+  .SortBy p {
+    width: 45%;
+  }
+  .dropbtn {
+    width: 100%;
+    display: block;
+  }
+
+  .GamesMyFolderContainer .MyFoldersMyTasks {
+    width: 100%;
+    flex-direction: column;
+    gap: 11px;
+    padding: 8px;
+  }
+
+  .MyFoldersHeader {
+    padding: 15px;
+  }
+  .dropdown {
+    width: 100%;
+  }
+  .dropdown-content {
+    width: 100%;
+  }
+  .Grades {
+    padding: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  .MyTasksHeader .header {
+    margin: 0;
+    font-size: 13px !important;
+  }
+  .MyTasksHeader .header h1 {
+    margin: 0;
+    font-size: 13px;
+  }
+  .showAllIcons p {
+    font-size: 13px;
+  }
+  .MyTasksContainer {
+    padding: 20px 8px;
+  }
+  .Taskcontainer {
+    font-size: 13px;
+  }
+  .checkmark {
+    height: 17px;
+    width: 17px;
+  }
+  .Taskcontainer .checkmark:after {
+    left: 6px;
+    top: 1px;
+  }
+  .new-task-input {
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+
+  /* my classes */
+  .header {
+    flex-direction: column;
+    width: 100%;
+  }
+  .actions {
+    display: flex;
+    margin: 10px 0;
+  }
+  .classCard {
+
+    padding: 15px;
+  }
+  .classesContainer {
+    padding: 20px 8px;
+  }
+  .cardHeader {
+    position: relative;
+  }
+  .Introduction {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+  .classCard {
+    
+    padding: 15px;
+  }
+  .SearchInput {
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+  }
+  .SearchButton {
+    flex-direction: column;
+    width: 100%;
+  }
+  .sortOptions {
+    display: flex;
+    align-items: center;
+    width: 89%;
+    justify-content: flex-start;
+    gap: 0px;
+  }
+  .sortOptions select {
+    width: 70%;
+  }
+  .sortOptions label {
+    width: 30%;
+  }
+  .DropDown {
+    width: 40%;
+    margin-bottom: 10px;
+  }
+  .IntroductionHeader {
+    display: flex;
+    gap: 10px;
+    flex-direction: column-reverse;
+  }
+  .classCard img {
+    width: 72px;
+  }
+  .cardDetails span {
+    font-size: 10px;
+}
+ 
+}
+@media screen and (max-width: 577px) {
+  #close22 {
+    display: block;
+  }
+  .Title p {
+    display: none;
+  }
+}
+@media screen and (max-width: 1024px) {
+
+
+  /* contact Us */
+  .ContactUsBigContainer {
+    padding: 13px 15px;
+    display: flex;
+    background-color: white;
+    border-radius: 8px;
+    gap: 15px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .ContactInformation {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .ContactForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+  }
+  /* sitting */
+  .FormInputs input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #c0c0c0;
+    margin-bottom: 30px;
+    padding: 10px 15px;
+    width: 90%;
+  }
+ 
+  .FormContent {
+    flex-direction: column;
+  }
+
+  .FormContainer {
+    max-width: 900px;
+    border-radius: 10px;
+    padding: 20px;
+    margin: auto;
+  }
+
+
+
+
+}
+
+@media screen and (max-width: 620px) {
+
+/* setting */
+  .FirstLastInputGroup {
+    flex-direction: column;
+  }
+  .SettingContainer {
+    flex-direction: column;
+  }
+  .SettingSideBar {
+    /* height: 100vh; */
+    width: 100%;
+  }
+  .ProfileForm .InputGroup input {
+    width: 100%;
+  }
+  .SettingSideBar {
+    height: auto;
+  }
+
+}
+
+@media screen and (max-width: 460px) {
+
+
+  /* contact us */
+
+  .FormInputs {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+  }
+  .FormInputs div {
+    flex-direction: column;
+    width: 100%;
+  }
+  /* sitting */
+  .SettingContainer {
+    flex-direction: column !important;
+  }
+  .FirstLastInputGroup {
+    flex-direction: column;
+  }
+  .SettingBigContainer {
+    padding: 0 1rem;
+    border: solid;
+  }
+
+  .InputContainer {
+    flex-direction: column;
+  }
+  .FormButtons {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  /* CONTACT US */
+  .SubjectOptions {
+    display: flex;
+    gap: 11px;
+    padding: 10px;
+    flex-direction: column;
+  }
+  .Contacts {
+    padding: 10px 0;
+  }
+  .ContactInfo {
+    margin-bottom: 10px;
+    padding-bottom: 0px;
+  }
+  .ContactInformationHeading h2 {
+    font-weight: 600;
+    font-size: 1.1rem;
+    line-height: 42px;
+  }
+  .ContactInformationHeading p {
+    font-size: 0.9rem;
+  }
+  .SendMessageBtn {
+    width: 100%;
+  }
+
+  /* setting */
+  .SettingBigContainer {
+    padding: 0 8px;
+    border: solid;
+  }
+
+  #profile .FormContainer {
+    padding: 20px 10px !important;
+  }
+  .ProfileForm {
+    width: 100%;
+    margin: 1px;
+  }
+  .ProfileForm > div {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .RowContainer { 
+    width: 100%;
+  }
+}
+
+
+
+
+/*
+single class
+*/
+@media screen and (max-width:1400px) {
+  .SingleClassHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.CrudAddNewStd {
+    justify-content: center;
+    gap: 15px;
+}
+
+.StatusIntroduction h1 {
+    font-size: 1.5rem;
+}
+
+.StatusIntroduction h3 {
+    font-size: 1rem;
+}
+
+.AddNewStdBtn {
+    font-size: 0.8rem;
+    padding: 8px 12px;
+}
+.SingleClassContent {
+  flex-direction: column !important;
+}
+.RecentRooms, .StudentLeaderBoard {
+  flex:none;
+  width: 100%;
+}
+.RecentRooms h3 {
+  font-size: 15px;
+}
+.RecentRooms p {
+  font-size: 11px;
+}
+
+.Second, .Third {
+  flex-basis: 48%;
+}
+.Second {
+  order: 2;
+}
+.First {
+  order: 1;
+}
+.Third {
+  order: 3;
+}
+.RecentRoomsLeft h3 {
+  font-size: 14px;
+}
+.CreateRoomsRight p { 
+  font-size: 16px;
+}
+.CreateRoomsRight svg { 
+  width: 17px;
+}
+.RecentRoomsLeft svg { 
+  width: 22px;
+}
+.RecentRoomHeader { 
+  padding: 15px 10px;
+}
+}
+
+@media screen and (max-width:560px) {
+  .CrudAddNewStd {
+    flex-direction: column;
+    align-items: center;
+}
+
+.AddNewStdBtn {
+    width: 77%;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+.StatusIntroduction h1 {
+    font-size: 1.2rem;
+}
+
+.StatusIntroduction h3 {
+    font-size: 0.9rem;
+}
+
+.Icons {
+    justify-content: center;
+    gap: 10px;
+}
+.SingleClassContainer,
+.ManageClassContainer,
+.GameClassContainer,
+.RoomClassContainer,
+.SingleGameContainer,
+.LeaderBoardContainer,
+.MyFolderContainer,
+.SettingBigContainer,
+.MyPoolsMainContainer,
+.MyClasses,
+.CreateNewPoolContainer,
+.classesContainer,
+.ContactUs
+{
+  width: calc(100% - 20px);
+}
+.bigpage-container{
+  justify-content: center;
+}
+.Durations {
+  font-size: 9px;
+}
+}
+/* table */
+@media screen and (max-width : 970px) {
+  .activityTable th,
+  .activityTable td {
+      font-size: 14px;
+      padding: 8px;
+  }
+
+}
+
+/*Active Rooms*/
+@media screen and (max-width : 650px) {
+  .Active .ActiveRoom{
+    flex: 1 1 100%;
+  }
+}
+
+/* Single Game */
+@media screen and (max-width: 750px) {
+  .SingleGame p:first-child{
+    display: none;
+  }
+  .SingleGame p:nth-child(2){
+    display: none;
+  }
+  .ImagesDesc {
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+}
+.Images img {
+  width: 40px;
+}
+.GameOverviewContainer .GameContainer {
+  flex: 1 1 100%;
+}
+}
+@media screen and (max-width:700px) {
+  .GameOverviewContainer .GameContainer {
+    flex: 1 1 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+ .GameOverviewContainer .GameContainer div {
+  width: 80%;
+ }
+ .GameImage {
+  display: flex;
+  justify-content: center;
+ }
+
+ .GameContainer .GameImage img {
+  width: 50%;
+  height: 100%;
+}
+}
+@media screen and (max-width:520px) {
+  .Images img {
+    width: 30px;
+  }
+}
+ /*My Folders */
+ @media screen and (max-width:750px) {
+  .FolderClass {
+    flex: 1 1 100%;
+   }
+ }
+ /* for grid View */
+ @media (max-width: 1200px) {
+  .MyFoldersContent.GridView {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+
+  .FolderClass {
+    flex: 1 1 calc(100% - 20px); /* Full width on smaller screens */
+  }
+  
+}
+@media screen and (max-width : 800px) {
+  .MyFoldersContent.GridView  .Grade {
+    flex-direction: column;
+  }
+  /* .FolderMain{
+    flex-direction: column;
+  }  */
+  .MyFoldersBigContainer {
+  padding: 15px 10px;
+  }
+  .FolderMain .Left {
+    font-size: 11px;
+  }
+  
+  .FolderMain .Right {
+    font-size: 12px;
+  
+  }
+  .FolderMain .Right svg {
+    width: 14px;
+  }
+  .MyFoldersContent .Grade {
+    padding: 10px 8px;
+  }
+  .FolderHeader h2 {
+    font-size: 17px;
+    margin: 0;
+}
+.MyFoldersContent, .MyPoolsContent {
+  width: 100%;
+}
+}
+
+@media (max-width: 480px) {
+  .MyFoldersContent.GridView {
+    grid-template-columns: 1fr; /* One column on very small screens */
+  }
+
+  .FolderClass {
+    flex: 1 1 100%; /* Full width on very small screens */
+  }
+}
+/* Single Room */
+@media screen and (max-width:1400px) {
+  .RoomsSection {
+    grid-template-columns: 100% 0;
+}
+  .RightSection {
+    display: none;
+  }
+  .LeftSection {
+    width: 100%;
+  }
+}
+/* Pools */
+@media screen and (max-width:1100px) {
+  .PoolClass h2 {
+    font-size: 17px;
+  }
+  .PoolClass .Icon svg {
+    width: 55px;
+  }
+}
+@media screen and (max-width:650px) {
+  .PoolClass h2 {
+    font-size: 15px;
+  }
+  .PoolClass .Icon svg {
+    width: 50px;
+  }
+  .MyPoolsBigContainer {
+    padding: 27px 0;
+  }
+  .Grade { 
+    padding: 15px;
+  }
+}
+@media screen and (max-width:430px) {
+  .PoolClass .Icon svg {
+    width: 47px;
+  }
+}
+
